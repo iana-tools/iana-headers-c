@@ -1,0 +1,15 @@
+{
+  "name": "iana-headers-c",
+  "version": "1.0.0",
+  "repo": "iana-tools/iana-headers-c",
+  "description": "The IANA C headers for various Internet protocol standards using data from the Internet Assigned Numbers Authority (IANA)",
+  "keywords": [
+    "iana"
+  ],
+  "license": "MIT",
+  "src": [
+    "cbor_constants.h",
+    "coap_constants.h",
+    "http_constants.h"
+  ]
+}
