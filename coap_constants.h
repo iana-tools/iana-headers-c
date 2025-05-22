@@ -336,6 +336,10 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_TOC_AS_CBOR = 10570,
   // application/ce+cbor; Ref: [CE-Binding, Section 6.3.2]
   COAP_CONTENT_FORMAT_APPLICATION_CE_AS_CBOR = 10571,
+  // application/toc+cbor;profile=2.16.840.1.113741.1.16.1; Ref: [TCG DICE Concise Evidence Binding for SPDM][draft-cds-rats-intel-corim-profile]
+  COAP_CONTENT_FORMAT_APPLICATION_TOC_AS_CBOR_2_16_840_1_113741_1_16_1 = 10572,
+  // application/ce+cbor;profile=2.16.840.1.113741.1.16.1; Ref: [TCG DICE Concise Evidence Binding for SPDM][draft-cds-rats-intel-corim-profile]
+  COAP_CONTENT_FORMAT_APPLICATION_CE_AS_CBOR_2_16_840_1_113741_1_16_1 = 10573,
   // application/json; deflate; Ref: [RFC8259][RFC9110, Section 8.4.1.2]
   COAP_CONTENT_FORMAT_APPLICATION_JSON_DEFLATE = 11050,
   // application/cbor; deflate; Ref: [RFC8949][RFC9110, Section 8.4.1.2]
