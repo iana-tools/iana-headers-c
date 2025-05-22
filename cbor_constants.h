@@ -240,6 +240,8 @@ typedef enum cbor_tag_t {
   CBOR_TAG_CHARACTER = 282ULL,
   // Object; Ref: [https://github.com/mishoo/cbor.lisp/blob/e1428a5/clext-spec.txt][Mihai_Bazon]
   CBOR_TAG_OBJECT = 283ULL,
+  // JSON Numeric Value, Represented as its JSON Text; Ref: [https://gist.github.com/theory/ef667af1c725240e6e30d525786d58e6][David_Wheeler]
+  CBOR_TAG_JSON_NUMERIC_VAL_REPRESENTED_AS_ITS_JSON_TXT = 284ULL,
   // isolate shared values within this scope; Ref: [https://cbor.is4.site/sharedref-namespace][IS4]
   CBOR_TAG_ISOLATE_SHARED_VALUES_WITHIN_THIS_SCOPE = 296ULL,
   // Geohash String; Ref: [Fast and Readable Geographical Hashing (CTA-5009-A)][Consumer_Technology_Association]
@@ -250,7 +252,7 @@ typedef enum cbor_tag_t {
   CBOR_TAG_CONCISE_EVIDENCE_MAP = 571ULL,
   // Unprotected CWT Claims Set [RFC-ietf-rats-uccs-12]; Ref: [RFC-ietf-rats-uccs-12]
   CBOR_TAG_UNPROTECTED_CWT_CLAIMS_SET = 601ULL,
-  // Detached EAT Bundle; Ref: [RFC-ietf-rats-eat-30, Section 5]
+  // Detached EAT Bundle; Ref: [RFC9711, Section 5]
   CBOR_TAG_DETACHED_EAT_BUNDLE = 602ULL,
   // extended time; Ref: [RFC9581, Section 3]
   CBOR_TAG_EXTENDED_TIME = 1001ULL,
@@ -422,6 +424,8 @@ typedef enum cbor_tag_t {
   CBOR_TAG_PLATFORMV_HAS_ACTION = 50011ULL,
   // PlatformV_IS_TYPE; Ref: [https://github.com/arthurwangtz/platformv-cbor][Wang_Tongzhou]
   CBOR_TAG_PLATFORMV_IS_TYPE = 50012ULL,
+  // A tag value of 51997 indicates that the payload is CBOR-LD.; Ref: [https://json-ld.github.io/cbor-ld-spec/#cbor-tags-for-cbor-ld][Wesley_Smith]
+  CBOR_TAG_TAG_VAL_OF_51997_INDICATES_THAT_PAYLOAD_IS_CBOR_LD = 51997ULL,
   // Self-described CBOR; see Section 3.4.6; Ref: [RFC8949]
   CBOR_TAG_SELF_DESCRIBED_CBOR = 55799ULL,
   // indicates that the file contains CBOR Sequences; Ref: [RFC9277]
@@ -440,6 +444,12 @@ typedef enum cbor_tag_t {
   CBOR_TAG_TAGGED_CBOR_ARRAY_CONTAINS_ATTEST_EVIDENCE_DATA_WITH_AN_INTEL_TEE_RPT = 60001ULL,
   // The tagged CBOR array contains attestation evidence data with an Intel SGX report.; Ref: [Shanwei_Cen]
   CBOR_TAG_TAGGED_CBOR_ARRAY_CONTAINS_ATTEST_EVIDENCE_DATA_WITH_AN_INTEL_SGX_RPT = 60002ULL,
+  // The tagged CBOR array containing a numeric expression.; Ref: [https://github.com/nedmsmith/draft-cds-rats-intel-corim-profile/blob/main/draft-cds-rats-intel-corim-profile.md][Ned_Smith]
+  CBOR_TAG_TAGGED_CBOR_ARRAY_CONTAINING_NUMERIC_EXPRESSION = 60010ULL,
+  // The tagged CBOR array containing a set of digests expression.; Ref: [https://github.com/nedmsmith/draft-cds-rats-intel-corim-profile/blob/main/draft-cds-rats-intel-corim-profile.md][Ned_Smith]
+  CBOR_TAG_TAGGED_CBOR_ARRAY_CONTAINING_SET_OF_DIGESTS_EXPRESSION = 60020ULL,
+  // The tagged CBOR array containing a set of strings expression.; Ref: [https://github.com/nedmsmith/draft-cds-rats-intel-corim-profile/blob/main/draft-cds-rats-intel-corim-profile.md][Ned_Smith]
+  CBOR_TAG_TAGGED_CBOR_ARRAY_CONTAINING_SET_OF_STRINGS_EXPRESSION = 60021ULL,
   // always invalid; see Section 10.1; Ref: [draft-bormann-cbor-notable-tags-02]
   CBOR_TAG_INVALID_16BIT = 65535ULL,
 
