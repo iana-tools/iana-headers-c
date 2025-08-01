@@ -168,7 +168,7 @@ typedef enum cbor_tag_t {
   CBOR_TAG_GEOGRAPHIC_COORDINATES = 103ULL,
   // Geographic Coordinate Reference System WKT or EPSG number; Ref: [draft-clarke-cbor-crs-01]
   CBOR_TAG_GEO_COORD_REF_SYSTEM_WKT_OR_EPSG_NUM = 104ULL,
-  // SUIT_Envelope as defined in Appendix A of [RFC-ietf-suit-manifest-33]; Ref: [RFC-ietf-suit-manifest-33]
+  // SUIT_Envelope as defined in Appendix A of [RFC-ietf-suit-manifest-34]; Ref: [RFC-ietf-suit-manifest-34]
   CBOR_TAG_SUIT_ENVELOPE = 107ULL,
   // Expected conversion to base16 encoding (lowercase); Ref: [draft-bormann-cbor-notable-tags-12, Section 2.1, Paragraph 2, Item 2]
   CBOR_TAG_EXPECTED_CONVERSION_BASE16_ENC_LOWERCASE = 108ULL,
@@ -246,11 +246,31 @@ typedef enum cbor_tag_t {
   CBOR_TAG_ISOLATE_SHARED_VALUES_WITHIN_THIS_SCOPE = 296ULL,
   // Geohash String; Ref: [Fast and Readable Geographical Hashing (CTA-5009-A)][Consumer_Technology_Association]
   CBOR_TAG_GEOHASH_STRING = 301ULL,
+  // A CBOR tag that contains a corim-map.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_CORIM_MAP = 501ULL,
+  // A CBOR tag that contains a conciseswid-tag-map.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_CONCISESWID_TAG_MAP = 505ULL,
+  // A CBOR tag that contains a concisemid-tag-map.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_CONCISEMID_TAG_MAP = 506ULL,
+  // A CBOR tag that contains an xcorim-map.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_XCORIM_MAP = 526ULL,
+  // A CBOR tag that contains either: xcorimmap, or signed-xcorim.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_XCORIMMAP_OR_SIGNED_XCORIM = 527ULL,
+  // A CBOR tag that contains a UEID between 7 and 33 bytes.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_UEID_BETWEEN_7_AND_33_BYTES = 550ULL,
+  // A CBOR tag that contains a security version number that is evaluated with equivalence semantics.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_SEC_VER_NUM_THAT_IS_EVALUATED_WITH_EQUIVALENCE_SEMANTICS = 552ULL,
+  // A CBOR tag that contains min-svn that identifies a security version number that is evaluated with greater than or equals semantics; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_CBOR_TAG_THAT_CONTAINS_MIN_SVN_THAT_IDENTIFIES_SEC_VER_NUM_THAT_IS_EVALUATED_WITH_GREATER_THAN_OR_EQUALS_SEMANTICS = 553ULL,
+  // A CBOR tag that contains an X.509 certificate chain created by the concatenation of as many PEM encoded X.509 certificates as needed. The certificates MUST be concatenated in order that each directly certifies the one preceding.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_X_509_CERTIFICATE_CHAIN_CREATED_BY_CONCATENATION_OF_AS_MANY_PEM_ENC_X_509_CERTIFICATES_AS_NEEDED = 556ULL,
+  // A CBOR tag that contains a byte string interpreted as an array of bits.; Ref: [TCG DICE Endorsement Architecture for Devices][TCG Errata for DICE Endorsement Architecture for Devices Version 1.1][TCG]
+  CBOR_TAG_BYTE_STRING_INTERPRETED_AS_AN_ARRAY_OF_BITS = 560ULL,
   // spdm-toc-map; Ref: [TCG DICE Concise Evidence Binding for SPDM][TCG]
   CBOR_TAG_SPDM_TOC_MAP = 570ULL,
   // concise-evidence-map; Ref: [TCG DICE Concise Evidence Binding for SPDM][TCG]
   CBOR_TAG_CONCISE_EVIDENCE_MAP = 571ULL,
-  // Unprotected CWT Claims Set [RFC-ietf-rats-uccs-12]; Ref: [RFC-ietf-rats-uccs-12]
+  // Unprotected CWT Claims Set [RFC9781]; Ref: [RFC9781]
   CBOR_TAG_UNPROTECTED_CWT_CLAIMS_SET = 601ULL,
   // Detached EAT Bundle; Ref: [RFC9711, Section 5]
   CBOR_TAG_DETACHED_EAT_BUNDLE = 602ULL,
@@ -268,7 +288,7 @@ typedef enum cbor_tag_t {
   CBOR_TAG_MULTI_DIMENSIONAL_ARRAY_COLUMN_MAJOR_ORDER = 1040ULL,
   // IEEE OUI/CID; Ref: [RFC9542]
   CBOR_TAG_IEEE_OUI_CID = 1048ULL,
-  // SUIT_Manifest as defined in Appendix A of [RFC-ietf-suit-manifest-33]; Ref: [RFC-ietf-suit-manifest-33]
+  // SUIT_Manifest as defined in Appendix A of [RFC-ietf-suit-manifest-34]; Ref: [RFC-ietf-suit-manifest-34]
   CBOR_TAG_SUIT_MANIFEST = 1070ULL,
   // [COSE algorithm identifier, Base Hash value]; Ref: [draft-bormann-cbor-notable-tags-09, Section 3.1.1]
   CBOR_TAG_COSE_ALGORITHM_ID_BASE_HASH_VALUE = 18556ULL,

@@ -254,25 +254,25 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_CONCISE_PROBLEM_DETAILS_AS_CBOR = 257,
   // application/swid+cbor; Ref: [RFC9393]
   COAP_CONTENT_FORMAT_APPLICATION_SWID_AS_CBOR = 258,
-  // application/pkixcmp; Ref: [RFC9482][RFC-ietf-lamps-rfc6712bis-10]
+  // application/pkixcmp; Ref: [RFC9482][RFC9811]
   COAP_CONTENT_FORMAT_APPLICATION_PKIXCMP = 259,
   // application/yang-sid+json; Ref: [RFC9595]
   COAP_CONTENT_FORMAT_APPLICATION_YANG_SID_AS_JSON = 260,
   // application/ace-groupcomm+cbor; Ref: [RFC9594]
   COAP_CONTENT_FORMAT_APPLICATION_ACE_GROUPCOMM_AS_CBOR = 261,
-  // application/ace-trl+cbor; Ref: [RFC-ietf-ace-revoked-token-notification-09]
+  // application/ace-trl+cbor; Ref: [RFC9770]
   COAP_CONTENT_FORMAT_APPLICATION_ACE_TRL_AS_CBOR = 262,
-  // application/eat+cwt; Ref: [RFC-ietf-rats-eat-media-type-12]
+  // application/eat+cwt; Ref: [RFC9782]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_AS_CWT = 263,
-  // application/eat+jwt; Ref: [RFC-ietf-rats-eat-media-type-12]
+  // application/eat+jwt; Ref: [RFC9782]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_AS_JWT = 264,
-  // application/eat-bun+cbor; Ref: [RFC-ietf-rats-eat-media-type-12]
+  // application/eat-bun+cbor; Ref: [RFC9782]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_BUN_AS_CBOR = 265,
-  // application/eat-bun+json; Ref: [RFC-ietf-rats-eat-media-type-12]
+  // application/eat-bun+json; Ref: [RFC9782]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_BUN_AS_JSON = 266,
-  // application/eat-ucs+cbor; Ref: [RFC-ietf-rats-eat-media-type-12]
+  // application/eat-ucs+cbor; Ref: [RFC9782]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_UCS_AS_CBOR = 267,
-  // application/eat-ucs+json; Ref: [RFC-ietf-rats-eat-media-type-12]
+  // application/eat-ucs+json; Ref: [RFC9782]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_UCS_AS_JSON = 268,
   // application/coap-eap; Ref: [RFC-ietf-ace-wg-coap-eap-14]
   COAP_CONTENT_FORMAT_APPLICATION_COAP_EAP = 269,
@@ -314,7 +314,7 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_TM_AS_JSON = 433,
   // application/sdf+json; Ref: [RFC-ietf-asdf-sdf-23]
   COAP_CONTENT_FORMAT_APPLICATION_SDF_AS_JSON = 434,
-  // application/uccs+cbor; Ref: [RFC-ietf-rats-uccs-12, Section 6.4]
+  // application/uccs+cbor; Ref: [RFC9781, Section 6.4]
   COAP_CONTENT_FORMAT_APPLICATION_UCCS_AS_CBOR = 601,
   // application/voucher+cose (TEMPORARY - registered 2022-04-12, extension registered 2025-03-07, expires 2026-04-12); Ref: [draft-ietf-anima-constrained-voucher-23]
   COAP_CONTENT_FORMAT_APPLICATION_VOUCHER_AS_COSE = 836,
@@ -326,19 +326,21 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_OSCORE = 10001,
   // application/javascript; Ref: [RFC4329]
   COAP_CONTENT_FORMAT_APPLICATION_JAVASCRIPT = 10002,
-  // application/eat+cwt; eat_profile="tag:psacertified.org,2023:psa#tfm"; Ref: [RFC-tschofenig-rats-psa-token-24]
+  // application/eat+cwt; eat_profile="tag:psacertified.org,2023:psa#tfm"; Ref: [RFC9783]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_AS_CWT_TAG_PSACERTIFIED_ORG_2023_PSA_TFM = 10003,
-  // application/eat+cwt; eat_profile="tag:psacertified.org,2019:psa#legacy"; Ref: [RFC-tschofenig-rats-psa-token-24]
+  // application/eat+cwt; eat_profile="tag:psacertified.org,2019:psa#legacy"; Ref: [RFC9783]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_AS_CWT_TAG_PSACERTIFIED_ORG_2019_PSA_LEGACY = 10004,
-  // application/eat+cwt; eat_profile=2.16.840.1.113741.1.16.1; Ref: [RFC-ietf-rats-eat-media-type-12][draft-cds-rats-intel-corim-profile-02]
+  // application/eat+cwt; eat_profile=2.16.840.1.113741.1.16.1; Ref: [RFC9782][draft-cds-rats-intel-corim-profile-05]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_AS_CWT_2_16_840_1_113741_1_16_1 = 10005,
+  // application/vnd.oms.cellular-cose-content+cbor; Ref: [OMS-Group e. V.]
+  COAP_CONTENT_FORMAT_APPLICATION_VND_OMS_CELLULAR_COSE_CONTENT_AS_CBOR = 10006,
   // application/toc+cbor; Ref: [CE-Binding, Section 6.3.1]
   COAP_CONTENT_FORMAT_APPLICATION_TOC_AS_CBOR = 10570,
   // application/ce+cbor; Ref: [CE-Binding, Section 6.3.2]
   COAP_CONTENT_FORMAT_APPLICATION_CE_AS_CBOR = 10571,
-  // application/toc+cbor;profile=2.16.840.1.113741.1.16.1; Ref: [TCG DICE Concise Evidence Binding for SPDM][draft-cds-rats-intel-corim-profile]
+  // application/toc+cbor;profile=2.16.840.1.113741.1.16.1; Ref: [TCG DICE Concise Evidence Binding for SPDM][draft-cds-rats-intel-corim-profile-05]
   COAP_CONTENT_FORMAT_APPLICATION_TOC_AS_CBOR_2_16_840_1_113741_1_16_1 = 10572,
-  // application/ce+cbor;profile=2.16.840.1.113741.1.16.1; Ref: [TCG DICE Concise Evidence Binding for SPDM][draft-cds-rats-intel-corim-profile]
+  // application/ce+cbor;profile=2.16.840.1.113741.1.16.1; Ref: [TCG DICE Concise Evidence Binding for SPDM][draft-cds-rats-intel-corim-profile-05]
   COAP_CONTENT_FORMAT_APPLICATION_CE_AS_CBOR_2_16_840_1_113741_1_16_1 = 10573,
   // application/json; deflate; Ref: [RFC8259][RFC9110, Section 8.4.1.2]
   COAP_CONTENT_FORMAT_APPLICATION_JSON_DEFLATE = 11050,
