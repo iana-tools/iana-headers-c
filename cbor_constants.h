@@ -408,6 +408,8 @@ typedef enum cbor_tag_t {
   CBOR_TAG_UR_SSH_SIGNATURE_TEXT_FORMAT_SSH_SIGNATURE = 40802ULL,
   // ur:ssh-certificate, Text format SSH certificate; Ref: [https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md][Wolf_McNally]
   CBOR_TAG_UR_SSH_CERTIFICATE_TXT_FORMAT_SSH_CERTIFICATE = 40803ULL,
+  // Concordium smart contract address; Ref: [https://proposals.concordium.com/CIS/cis-7.html#smart-contract-address][Thomas_Dinsdale-Young]
+  CBOR_TAG_CONCORDIUM_SMART_CONTRACT_ADDRESS = 40919ULL,
   // A confidentiality clearance. The key value pairs of the map are defined in ADatP-4774.8; Ref: [Aidan_Murdock]
   CBOR_TAG_CONFIDENTIALITY_CLEARANCE = 42600ULL,
   // A metadata binding. The elements of the array are defined in AdatP-4778.8. The tag is also used as part of the magic number in on-disk detached and encapsulating bindings.; Ref: [Aidan_Murdock]
