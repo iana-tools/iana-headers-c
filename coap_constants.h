@@ -194,7 +194,7 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_IMAGE_GIF = 21,
   // image/jpeg; Ref: [ISO/IEC 10918-5]
   COAP_CONTENT_FORMAT_IMAGE_JPEG = 22,
-  // image/png; Ref: [RFC2083]
+  // image/png; Ref: [PNG]
   COAP_CONTENT_FORMAT_IMAGE_PNG = 23,
   // application/link-format; Ref: [RFC6690]
   COAP_CONTENT_FORMAT_APPLICATION_LINK_FORMAT = 40,
