@@ -160,6 +160,8 @@ typedef enum cbor_tag_t {
   CBOR_TAG_COSE_MACED_DATA_OBJECT = 97ULL,
   // COSE Signed Data Object; Ref: [RFC9052]
   CBOR_TAG_COSE_SIGNED_DATA_OBJECT = 98ULL,
+  // CRI Reference; Ref: [RFC-ietf-core-href-29]
+  CBOR_TAG_CRI_REF = 99ULL,
   // Number of days since the epoch date 1970-01-01; Ref: [RFC8943]
   CBOR_TAG_NUMBER_OF_DAYS_SINCE_THE_EPOCH_DATE_1970_01_01 = 100ULL,
   // alternatives as given by the uint + 128; see Section 9.1; Ref: [draft-bormann-cbor-notable-tags-07]
@@ -312,6 +314,12 @@ typedef enum cbor_tag_t {
   CBOR_TAG_ID_FOR_A_FHIR_CONSTANT = 32768ULL,
   // External reference; Ref: [https://gitlab.com/Hawk777/cbor-specs/-/blob/main/external-reference.md][Christopher_Head]
   CBOR_TAG_EXTERNAL_REF = 32769ULL,
+  // Logical operator: NONE / NOT. Encodes the logical operation (!item1&&!item2&&!item3&&..., if array), otherwise (!item).; Ref: [Jon_Caruana]
+  CBOR_TAG_LOGICAL_OPERATOR_NONE_OR_NOT = 32870ULL,
+  // Logical operator: ANY. Encodes the logical operation (item1||item2||item3||...).; Ref: [Jon_Caruana]
+  CBOR_TAG_LOGICAL_OPERATOR_ANY = 32871ULL,
+  // Logical operator: ALL. Encodes the logical operation (item1&&item2&&item3&&...).; Ref: [Jon_Caruana]
+  CBOR_TAG_LOGICAL_OPERATOR_ALL = 32872ULL,
   // ur:known-value, Semantic signifier; Ref: [https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md][Wolf_McNally]
   CBOR_TAG_UR_KNOWN_VALUE_SEMANTIC_SIGNIFIER = 40000ULL,
   // ur:digest, 32-byte SHA-256 digest; Ref: [https://github.com/BlockchainCommons/Research/blob/master/papers/bcr-2020-006-urtypes.md][Wolf_McNally]

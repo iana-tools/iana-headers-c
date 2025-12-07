@@ -14,7 +14,7 @@ typedef enum http_status_code_t {
   HTTP_STATUS_CODE_PROCESSING = 102,
   // Early Hints; Ref: [RFC8297]
   HTTP_STATUS_CODE_EARLY_HINTS = 103,
-  // Upload Resumption Supported (TEMPORARY - registered 2024-11-13, expires 2025-11-13); Ref: [draft-ietf-httpbis-resumable-upload-05]
+  // Upload Resumption Supported (TEMPORARY - registered 2024-11-13, extension registered 2025-09-15, expires 2026-11-13); Ref: [draft-ietf-httpbis-resumable-upload-05]
   HTTP_STATUS_CODE_UPLOAD_RESUMPTION_SUPPORTED = 104,
 
   /* 200-299 : Success - The action was successfully received, understood, and accepted */
@@ -153,6 +153,7 @@ X(HTTP_FIELD_NAME_ACCEPT_FEATURES, "Accept-Features") /* Accept-Features; perman
 X(HTTP_FIELD_NAME_ACCEPT_LANGUAGE, "Accept-Language") /* Accept-Language; permanent; Ref: [RFC 9110, Section 12.5.4: HTTP Semantics] */\
 X(HTTP_FIELD_NAME_ACCEPT_PATCH, "Accept-Patch") /* Accept-Patch; permanent; Ref: [RFC 5789: PATCH Method for HTTP] */\
 X(HTTP_FIELD_NAME_ACCEPT_POST, "Accept-Post") /* Accept-Post; permanent; Ref: [Linked Data Platform 1.0] */\
+X(HTTP_FIELD_NAME_ACCEPT_QUERY, "Accept-Query") /* Accept-Query; List; permanent; Ref: [RFC-ietf-httpbis-safe-method-w-body-14, Section 3: The HTTP QUERY Method] */\
 X(HTTP_FIELD_NAME_ACCEPT_RANGES, "Accept-Ranges") /* Accept-Ranges; permanent; Ref: [RFC 9110, Section 14.3: HTTP Semantics] */\
 X(HTTP_FIELD_NAME_ACCEPT_SIGNATURE, "Accept-Signature") /* Accept-Signature; permanent; Ref: [RFC 9421, Section 5.1: HTTP Message Signatures] */\
 X(HTTP_FIELD_NAME_ACCESS_CONTROL, "Access-Control") /* Access-Control; obsoleted; Ref: [Access Control for Cross-site Requests] */\
@@ -176,11 +177,11 @@ X(HTTP_FIELD_NAME_APPLY_TO_REDIRECT_REF, "Apply-To-Redirect-Ref") /* Apply-To-Re
 X(HTTP_FIELD_NAME_AUTHENTICATION_CONTROL, "Authentication-Control") /* Authentication-Control; permanent; Ref: [RFC 8053, Section 4: HTTP Authentication Extensions for Interactive Clients] */\
 X(HTTP_FIELD_NAME_AUTHENTICATION_INFO, "Authentication-Info") /* Authentication-Info; permanent; Ref: [RFC 9110, Section 11.6.3: HTTP Semantics] */\
 X(HTTP_FIELD_NAME_AUTHORIZATION, "Authorization") /* Authorization; permanent; Ref: [RFC 9110, Section 11.6.2: HTTP Semantics] */\
-X(HTTP_FIELD_NAME_AVAILABLE_DICTIONARY, "Available-Dictionary") /* Available-Dictionary; permanent; Ref: [RFC-ietf-httpbis-compression-dictionary-19, Section 2.2: Compression Dictionary Transport] */\
+X(HTTP_FIELD_NAME_AVAILABLE_DICTIONARY, "Available-Dictionary") /* Available-Dictionary; permanent; Ref: [RFC 9842, Section 2.2: Compression Dictionary Transport] */\
 X(HTTP_FIELD_NAME_A_IM, "A-IM") /* A-IM; permanent; Ref: [RFC 3229: Delta encoding in HTTP] */\
 X(HTTP_FIELD_NAME_CACHE_CONTROL, "Cache-Control") /* Cache-Control; permanent; Ref: [RFC 9111, Section 5.2: HTTP Caching] */\
-X(HTTP_FIELD_NAME_CACHE_GROUPS, "Cache-Groups") /* Cache-Groups; permanent; Ref: [RFC-ietf-httpbis-cache-groups-07: HTTP Cache Groups] */\
-X(HTTP_FIELD_NAME_CACHE_GROUP_INVALIDATION, "Cache-Group-Invalidation") /* Cache-Group-Invalidation; permanent; Ref: [RFC-ietf-httpbis-cache-groups-07: HTTP Cache Groups] */\
+X(HTTP_FIELD_NAME_CACHE_GROUPS, "Cache-Groups") /* Cache-Groups; permanent; Ref: [RFC9875: HTTP Cache Groups] */\
+X(HTTP_FIELD_NAME_CACHE_GROUP_INVALIDATION, "Cache-Group-Invalidation") /* Cache-Group-Invalidation; permanent; Ref: [RFC9875: HTTP Cache Groups] */\
 X(HTTP_FIELD_NAME_CACHE_STATUS, "Cache-Status") /* Cache-Status; List; permanent; Ref: [RFC 9211: The Cache-Status HTTP Response Header Field] */\
 X(HTTP_FIELD_NAME_CALDAV_TIMEZONES, "CalDAV-Timezones") /* CalDAV-Timezones; permanent; Ref: [RFC 7809, Section 7.1: Calendaring Extensions to WebDAV (CalDAV): Time Zones by Reference] */\
 X(HTTP_FIELD_NAME_CAL_MANAGED_ID, "Cal-Managed-ID") /* Cal-Managed-ID; permanent; Ref: [RFC 8607, Section 5.1: Calendaring Extensions to WebDAV (CalDAV): Managed Attachments] */\
@@ -218,7 +219,7 @@ X(HTTP_FIELD_NAME_CONTENT_SECURITY_POLICY_REPORT_ONLY, "Content-Security-Policy-
 X(HTTP_FIELD_NAME_CONTENT_STYLE_TYPE, "Content-Style-Type") /* Content-Style-Type; obsoleted; Ref: [HTML 4.01 Specification] */\
 X(HTTP_FIELD_NAME_CONTENT_TYPE, "Content-Type") /* Content-Type; permanent; Ref: [RFC 9110, Section 8.3: HTTP Semantics] */\
 X(HTTP_FIELD_NAME_CONTENT_VERSION, "Content-Version") /* Content-Version; obsoleted; Ref: [RFC 2068: Hypertext Transfer Protocol -- HTTP/1.1] */\
-X(HTTP_FIELD_NAME_COOKIE, "Cookie") /* Cookie; permanent; Ref: [RFC 6265: HTTP State Management Mechanism] */\
+X(HTTP_FIELD_NAME_COOKIE, "Cookie") /* Cookie; permanent; Ref: [RFC-ietf-httpbis-rfc6265bis-22, Section 5.8.1: Cookies: HTTP State Management Mechanism] */\
 X(HTTP_FIELD_NAME_COOKIE2, "Cookie2") /* Cookie2; obsoleted; Ref: [RFC 2965: HTTP State Management Mechanism] */\
 X(HTTP_FIELD_NAME_CROSS_ORIGIN_EMBEDDER_POLICY, "Cross-Origin-Embedder-Policy") /* Cross-Origin-Embedder-Policy; Item; permanent; Ref: [HTML] */\
 X(HTTP_FIELD_NAME_CROSS_ORIGIN_EMBEDDER_POLICY_REPORT_ONLY, "Cross-Origin-Embedder-Policy-Report-Only") /* Cross-Origin-Embedder-Policy-Report-Only; Item; permanent; Ref: [HTML] */\
@@ -241,7 +242,7 @@ X(HTTP_FIELD_NAME_DEPTH, "Depth") /* Depth; permanent; Ref: [RFC 4918: HTTP Exte
 X(HTTP_FIELD_NAME_DERIVED_FROM, "Derived-From") /* Derived-From; obsoleted; Ref: [RFC 2068: Hypertext Transfer Protocol -- HTTP/1.1] */\
 X(HTTP_FIELD_NAME_DESTINATION, "Destination") /* Destination; permanent; Ref: [RFC 4918: HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)] */\
 X(HTTP_FIELD_NAME_DETACHED_JWS, "Detached-JWS") /* Detached-JWS; permanent; Ref: [RFC 9635: Grant Negotiation and Authorization Protocol (GNAP)] */\
-X(HTTP_FIELD_NAME_DICTIONARY_ID, "Dictionary-ID") /* Dictionary-ID; permanent; Ref: [RFC-ietf-httpbis-compression-dictionary-19, Section 2.3: Compression Dictionary Transport] */\
+X(HTTP_FIELD_NAME_DICTIONARY_ID, "Dictionary-ID") /* Dictionary-ID; permanent; Ref: [RFC 9842, Section 2.3: Compression Dictionary Transport] */\
 X(HTTP_FIELD_NAME_DIFFERENTIAL_ID, "Differential-ID") /* Differential-ID; deprecated; Ref: [The HTTP Distribution and Replication Protocol] */\
 X(HTTP_FIELD_NAME_DIGEST, "Digest") /* Digest; obsoleted; Ref: [RFC 3230: Instance Digests in HTTP] */\
 X(HTTP_FIELD_NAME_DPOP, "DPoP") /* DPoP; permanent; Ref: [RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP)] */\
@@ -358,8 +359,9 @@ X(HTTP_FIELD_NAME_SEC_WEBSOCKET_VERSION, "Sec-WebSocket-Version") /* Sec-WebSock
 X(HTTP_FIELD_NAME_SERVER, "Server") /* Server; permanent; Ref: [RFC 9110, Section 10.2.4: HTTP Semantics] */\
 X(HTTP_FIELD_NAME_SERVER_TIMING, "Server-Timing") /* Server-Timing; permanent; Ref: [Server Timing] */\
 X(HTTP_FIELD_NAME_SETPROFILE, "SetProfile") /* SetProfile; obsoleted; Ref: [Implementation of OPS Over HTTP] */\
-X(HTTP_FIELD_NAME_SET_COOKIE, "Set-Cookie") /* Set-Cookie; permanent; Ref: [RFC 6265: HTTP State Management Mechanism] */\
+X(HTTP_FIELD_NAME_SET_COOKIE, "Set-Cookie") /* Set-Cookie; permanent; Ref: [RFC-ietf-httpbis-rfc6265bis-22, Section 5.8.1: Cookies: HTTP State Management Mechanism] */\
 X(HTTP_FIELD_NAME_SET_COOKIE2, "Set-Cookie2") /* Set-Cookie2; obsoleted; Ref: [RFC 2965: HTTP State Management Mechanism] */\
+X(HTTP_FIELD_NAME_SET_TXN, "Set-Txn") /* Set-Txn; permanent; Ref: [RFC-ietf-scim-events-15, Section 3: SCIM Profile for Security Event Tokens] */\
 X(HTTP_FIELD_NAME_SIGNATURE, "Signature") /* Signature; permanent; Ref: [RFC 9421, Section 4.2: HTTP Message Signatures] */\
 X(HTTP_FIELD_NAME_SIGNATURE_INPUT, "Signature-Input") /* Signature-Input; permanent; Ref: [RFC 9421, Section 4.1: HTTP Message Signatures] */\
 X(HTTP_FIELD_NAME_SLUG, "SLUG") /* SLUG; permanent; Ref: [RFC 5023: The Atom Publishing Protocol] */\
@@ -383,7 +385,7 @@ X(HTTP_FIELD_NAME_UPGRADE, "Upgrade") /* Upgrade; permanent; Ref: [RFC 9110, Sec
 X(HTTP_FIELD_NAME_URGENCY, "Urgency") /* Urgency; permanent; Ref: [RFC 8030, Section 5.3: Generic Event Delivery Using HTTP Push] */\
 X(HTTP_FIELD_NAME_URI, "URI") /* URI; obsoleted; Ref: [RFC 2068: Hypertext Transfer Protocol -- HTTP/1.1] */\
 X(HTTP_FIELD_NAME_USER_AGENT, "User-Agent") /* User-Agent; permanent; Ref: [RFC 9110, Section 10.1.5: HTTP Semantics] */\
-X(HTTP_FIELD_NAME_USE_AS_DICTIONARY, "Use-As-Dictionary") /* Use-As-Dictionary; permanent; Ref: [RFC-ietf-httpbis-compression-dictionary-19, Section 2.1: Compression Dictionary Transport] */\
+X(HTTP_FIELD_NAME_USE_AS_DICTIONARY, "Use-As-Dictionary") /* Use-As-Dictionary; permanent; Ref: [RFC 9842, Section 2.1: Compression Dictionary Transport] */\
 X(HTTP_FIELD_NAME_VARIANT_VARY, "Variant-Vary") /* Variant-Vary; permanent; Ref: [RFC 2295: Transparent Content Negotiation in HTTP] */\
 X(HTTP_FIELD_NAME_VARY, "Vary") /* Vary; permanent; Ref: [RFC 9110, Section 12.5.5: HTTP Semantics] */\
 X(HTTP_FIELD_NAME_VIA, "Via") /* Via; permanent; Ref: [RFC 9110, Section 7.6.3: HTTP Semantics] */\

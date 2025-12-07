@@ -156,6 +156,10 @@ typedef enum coap_option_t {
   COAP_OPTION_PROXY_SCHEME = 39,
   // Size1; Ref: [RFC7252][RFC8613]
   COAP_OPTION_SIZE1 = 60,
+  // Proxy-Cri; Ref: [RFC-ietf-core-href-29]
+  COAP_OPTION_PROXY_CRI = 235,
+  // Proxy-Scheme-Number; Ref: [RFC-ietf-core-href-29]
+  COAP_OPTION_PROXY_SCHEME_NUMBER = 239,
   // Echo; Ref: [RFC9175]
   COAP_OPTION_ECHO = 252,
 
@@ -274,12 +278,16 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_EAT_UCS_AS_CBOR = 267,
   // application/eat-ucs+json; Ref: [RFC9782]
   COAP_CONTENT_FORMAT_APPLICATION_EAT_UCS_AS_JSON = 268,
-  // application/coap-eap; Ref: [RFC-ietf-ace-wg-coap-eap-14]
+  // application/coap-eap; Ref: [RFC9820]
   COAP_CONTENT_FORMAT_APPLICATION_COAP_EAP = 269,
   // application/dots+cbor; Ref: [RFC9132]
   COAP_CONTENT_FORMAT_APPLICATION_DOTS_AS_CBOR = 271,
   // application/missing-blocks+cbor-seq; Ref: [RFC9177]
   COAP_CONTENT_FORMAT_APPLICATION_MISSING_BLOCKS_AS_CBOR_SEQ = 272,
+  // application/scitt-statement+cose; Ref: [RFC-ietf-scitt-architecture-21]
+  COAP_CONTENT_FORMAT_APPLICATION_SCITT_STATEMENT_AS_COSE = 277,
+  // application/scitt-receipt+cose; Ref: [RFC-ietf-scitt-architecture-21]
+  COAP_CONTENT_FORMAT_APPLICATION_SCITT_RECEIPT_AS_COSE = 278,
   // application/pkcs7-mime; smime-type=server-generated-key; Ref: [RFC7030][RFC8551][RFC9148]
   COAP_CONTENT_FORMAT_APPLICATION_PKCS7_MIME_SERVER_GENERATED_KEY = 280,
   // application/pkcs7-mime; smime-type=certs-only; Ref: [RFC8551][RFC9148]
@@ -296,6 +304,8 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_AIF_AS_CBOR = 290,
   // application/aif+json; Ref: [RFC9237]
   COAP_CONTENT_FORMAT_APPLICATION_AIF_AS_JSON = 291,
+  // application/aif+cbor;toid=CRI-local-part; Ref: [RFC-ietf-core-href-29]
+  COAP_CONTENT_FORMAT_APPLICATION_AIF_AS_CBOR_CRI_LOCAL_PART = 292,
   // application/senml+xml; Ref: [RFC8428]
   COAP_CONTENT_FORMAT_APPLICATION_SENML_AS_XML = 310,
   // application/sensml+xml; Ref: [RFC8428]
@@ -314,6 +324,8 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_TM_AS_JSON = 433,
   // application/sdf+json; Ref: [RFC-ietf-asdf-sdf-23]
   COAP_CONTENT_FORMAT_APPLICATION_SDF_AS_JSON = 434,
+  // application/dns-message; Ref: [RFC8484][RFC-ietf-core-dns-over-coap-19, Section 4.1]
+  COAP_CONTENT_FORMAT_APPLICATION_DNS_MESSAGE = 553,
   // application/uccs+cbor; Ref: [RFC9781, Section 6.4]
   COAP_CONTENT_FORMAT_APPLICATION_UCCS_AS_CBOR = 601,
   // application/voucher+cose (TEMPORARY - registered 2022-04-12, extension registered 2025-03-07, expires 2026-04-12); Ref: [draft-ietf-anima-constrained-voucher-23]
@@ -360,6 +372,14 @@ typedef enum coap_content_format_t {
   COAP_CONTENT_FORMAT_APPLICATION_JSON_ZSTD = 12050,
   // text/css; Ref: [RFC2318]
   COAP_CONTENT_FORMAT_TEXT_CSS = 20000,
+  // application/vnd.as207960.vas.config+jer; Ref: [AS207960_Cyfyngedig]
+  COAP_CONTENT_FORMAT_APPLICATION_VND_AS207960_VAS_CONFIG_AS_JER = 20001,
+  // application/vnd.as207960.vas.config+uper; Ref: [AS207960_Cyfyngedig]
+  COAP_CONTENT_FORMAT_APPLICATION_VND_AS207960_VAS_CONFIG_AS_UPER = 20002,
+  // application/vnd.as207960.vas.tap+jer; Ref: [AS207960_Cyfyngedig]
+  COAP_CONTENT_FORMAT_APPLICATION_VND_AS207960_VAS_TAP_AS_JER = 20003,
+  // application/vnd.as207960.vas.tap+uper; Ref: [AS207960_Cyfyngedig]
+  COAP_CONTENT_FORMAT_APPLICATION_VND_AS207960_VAS_TAP_AS_UPER = 20004,
   // image/svg+xml; Ref: [https://www.w3.org/TR/SVG/mimereg.html]
   COAP_CONTENT_FORMAT_IMAGE_SVG_AS_XML = 30000
 
